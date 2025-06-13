@@ -1,3 +1,6 @@
+"Client";
+
+import React from "react";
 import { MessageCircle, Book, Settings, Zap, Shield } from "lucide-react";
 
 const faqCategories = [

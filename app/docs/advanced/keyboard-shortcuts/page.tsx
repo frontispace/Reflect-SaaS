@@ -1,3 +1,5 @@
+"Client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Keyboard, Command, Search, Edit, FileText, Zap, Settings, Navigation } from "lucide-react"

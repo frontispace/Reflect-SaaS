@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function ClientImplementationPage() {
   return (
-    <div className="py-8">
+    <><div className="py-8">
       <div className="mb-8">
         <Link href="/docs/real-time-chat/server-setup" className="text-purple-400 hover:text-purple-300 flex items-center mb-2">
           <ArrowLeft className="mr-1 h-4 w-4" /> Back to Server Setup
@@ -229,11 +229,14 @@ const socketService = new SocketService();
 export default socketService;`}
                 </pre>
               </div>
-            </TabsContent>
+              </TabsContent>
+            </Tabs>
             <TabsContent value="javascript" className="mt-4">
-              <div className="bg-black/50 p-4 rounded-md border border-purple-500/20 font-mono text-sm">
-                <pre className="text-gray-300 whitespace-pre-wrap">
-                  {`// lib/socket-service.js
+              {/* Add content here */}
+            </TabsContent>
+            <div className="bg-black/50 p-4 rounded-md border border-purple-500/20 font-mono text-sm">
+              <pre className="text-gray-300 whitespace-pre-wrap">
+                {`// lib/socket-service.js
 import { io } from 'socket.io-client';
 import { getAuthToken } from '@/lib/auth';
 
@@ -361,14 +364,12 @@ class SocketService {
 const socketService = new SocketService();
 
 export default socketService;`}
-                </pre>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
+              </pre>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
-
-      <div className="mb-12">
+    </div><div className="mb-12">
         <h2 className="text-2xl font-bold mb-4 purple-gradient-text">Chat State Management</h2>
         <p className="text-gray-300 mb-6">
           Next, let's create a Zustand store to manage our chat state. This will handle messages, typing indicators, and
@@ -520,7 +521,32 @@ const useChatStore = create<ChatState>()(
           
           const optimisticMessage: Message = {
             id: \`pending-\${clientId}\`,
-            roomId: currentRoomId,
+                roomId: currentRoomId,
+                sender: {
+                  id: 'current-user-id', // Replace with actual user ID
+                  name: 'Current User', // Replace with actual user name
+                  avatar: '/placeholder.svg', // Replace with actual user avatar
+                },
+                content,
+                attachments,
+                timestamp: new Date(),
+                readBy: [],
+                reactions: [],
+                edited: false,
+                deleted: false,
+                metadata: {
+                  clientId,
+                },
+              };
+              
+              // Add to pending messages
+              set((state) => ({
+                pendingMessages: {
+                  ...state.pendingMessages,
+                  [currentRoomId]: [...(state.pendingMessages[currentRoomId] || []), optimisticMessage],
+                },
+              }));
+            },
             sender: {
               // This should be the current user's info
               id: 'current-user-id', // Replace with actual user ID
@@ -852,4 +878,5 @@ const useChatStore = create(
           
           const optimisticMessage = {
             id: \`pending-\${clientId}\`,
-            roomId: currentRoomId,
+</div></div></div></div></div></div>
+`}</div></div></div></div></div></div>`

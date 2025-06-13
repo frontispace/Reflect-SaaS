@@ -1,3 +1,7 @@
+"Client";
+
+import React from "react";
+
 // Data generators for WebSocket server
 
 // Generate CPU usage data

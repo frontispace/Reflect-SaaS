@@ -1,3 +1,5 @@
+"Client"
+
 import {
   Card,
   CardContent,

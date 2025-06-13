@@ -1,3 +1,6 @@
+"Client";
+
+import React from "react";
 export const blogCategories = [
   "Productivity",
   "AI",

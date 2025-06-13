@@ -1,3 +1,6 @@
+"Client";
+
+import React from "react";
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfigFile from '@tailwindConfig'
 

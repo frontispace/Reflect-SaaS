@@ -1,3 +1,7 @@
+"Client";
+
+import React from "react";
+
 import express, { json } from "express"
 import { createServer } from "http"
 import { Server, OPEN } from "ws"

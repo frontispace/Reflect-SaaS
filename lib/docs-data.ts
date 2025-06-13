@@ -1,3 +1,6 @@
+"Client";
+
+import React from "react";
 export const docsCategories = [
   {
     title: "Getting Started",
