@@ -1,6 +1,3 @@
-"Client";
-
-import React from "react";
 import { MessageCircle, Mail, Phone, Clock, Users, Headphones, FileText, Video, Zap, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
